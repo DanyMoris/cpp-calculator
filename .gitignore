@@ -1,0 +1,13 @@
+# 1. Ignore everything
+*
+
+# 2. But do NOT ignore directories (except the build folder)
+!*/
+build/
+
+# 3. Specifically un-ignore .cpp and .h files
+!*.cpp
+!*.h
+
+# 4. Keep the gitignore
+!.gitignore
