@@ -1,13 +1,15 @@
-# 1. Ignore everything
+# Ignore everything
 *
 
-# 2. But do NOT ignore directories (except the build folder)
+# Do not ignore directories (except the build folder)
 !*/
 build/
 
-# 3. Specifically un-ignore .cpp and .h files
+# Specifically un-ignore source and Qt project files
 !*.cpp
 !*.h
+!*.pro
+!*.ui
 
-# 4. Keep the gitignore
+# Keep the gitignore
 !.gitignore
