@@ -43,34 +43,26 @@ public:
     }
 
     Rational operator+(const Rational& other) const {
-        int newNumerator = numerator_ * other.denominator_ + other.numerator_ * denominator_;
-        int newDenominator = denominator_ * other.denominator_;
-        Rational result(newNumerator, newDenominator);
-        result.Reduction();
+        Rational result = Rational(*this);
+        result += other;
         return result;
     }
 
     Rational operator-(const Rational& other) const {
-        int newNumerator = numerator_ * other.denominator_ - other.numerator_ * denominator_;
-        int newDenominator = denominator_ * other.denominator_;
-        Rational result(newNumerator, newDenominator);
-        result.Reduction();
+        Rational result = Rational(*this);
+        result -= other;
         return result;
     }
 
     Rational operator*(const Rational& other) const {
-        int newNumerator = numerator_ * other.numerator_;
-        int newDenominator = denominator_ * other.denominator_;
-        Rational result(newNumerator, newDenominator);
-        result.Reduction();
+        Rational result = Rational(*this);
+        result *= other;
         return result;
     }
 
     Rational operator/(const Rational& other) const {
-        int newNumerator = numerator_ * other.denominator_;
-        int newDenominator = denominator_ * other.numerator_;
-        Rational result(newNumerator, newDenominator);
-        result.Reduction();
+        Rational result = Rational(*this);
+        result /= other;
         return result;
     }
 
@@ -178,7 +170,7 @@ public:
     }
 
 private:
-    int numerator_;
-    int denominator_;
+    int64_t numerator_;
+    int64_t denominator_;
 
 };
